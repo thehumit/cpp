@@ -1,14 +1,15 @@
-NAME		= fixed_00
+NAME		= ScavTrap
 
 SRCS	=	main.cpp \
-			Fixed.cpp
+			ClapTrap.cpp \
+			ScavTrap.cpp
 
 OBJS			= $(SRCS:%cpp=%o)
 
 CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= fixed_00
+NAME			= ScavTrap
 
 all:			$(NAME)
 
