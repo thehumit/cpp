@@ -1,16 +1,23 @@
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main(void)
+int	main()
 {
-	ScavTrap	tquintan;
+	DiamondTrap	diamond;
+	diamond.getInfo();
 
-	tquintan.attack("Bsophia");
-	tquintan.takeDamage(10);
-	tquintan.beRepaired(10);
-	ScavTrap tquintan2 = tquintan;
-	ScavTrap tquintan3;
-	tquintan3 = tquintan;
-	tquintan2.attack("Data Nicki");
-	tquintan2.guardGate();
-	tquintan3.guardGate();
+	diamond.attack("Evaluator");
+	diamond.beRepaired(10);
+	diamond.guardGate();
+	diamond.highFivesGuys();
+	diamond.whoAmI();
+	diamond.getInfo();
+
+	DiamondTrap diamond2 = diamond;
+
+	DiamondTrap	diamond3;
+	
+	diamond3 = diamond;
+
+	diamond2.whoAmI();
+	diamond3.whoAmI();
 }

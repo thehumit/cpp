@@ -1,4 +1,4 @@
-NAME		= ScavTrap
+NAME		= FragTrap
 
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
@@ -9,7 +9,7 @@ OBJS			= $(SRCS:%cpp=%o)
 CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= ScavTrap
+NAME			= FragTrap
 
 all:			$(NAME)
 

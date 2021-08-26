@@ -5,6 +5,7 @@ ScavTrap::ScavTrap(std::string name)
 {
     this->_hitpoints = 100;
     this->_energyPoints = 50;
+    this->_energyPointCP = 50;
     this->_attackDamage = 20;
     std::cout << "ScavTrap " << name << "was created." << std::endl;
 }
@@ -15,7 +16,7 @@ ScavTrap::ScavTrap(const ScavTrap &cp)
     (*this) = cp;
 }
 
-ScavTrap&	ScavTrap::operator= (const ScavTrap &cp)
+ScavTrap&	ScavTrap::operator= (ScavTrap const &cp)
 {
     if (this == &cp)
         return (*this);
@@ -24,6 +25,18 @@ ScavTrap&	ScavTrap::operator= (const ScavTrap &cp)
     this->_energyPoints = cp._energyPoints;
     this->_attackDamage = cp._attackDamage;
 	return (*this);
+}
+
+int ScavTrap::getEPCP()
+{
+    return(this->_energyPointCP);
+}
+
+void ScavTrap::attack(std::string const & target)
+{
+    std::cout << "SCAVTRAP " << this->_name 
+        << " attacks " << target << " , causing " 
+            << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()

@@ -1,15 +1,17 @@
-NAME		= ScavTrap
+NAME		= DiamondTrap
 
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
-			ScavTrap.cpp
+			ScavTrap.cpp \
+			FragTrap.cpp \
+			DiamondTrap.cpp
 
 OBJS			= $(SRCS:%cpp=%o)
 
 CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= ScavTrap
+NAME			= DiamondTrap
 
 all:			$(NAME)
 
