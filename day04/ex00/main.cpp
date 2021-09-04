@@ -23,4 +23,10 @@ int main()
     y->makeSound(); //will output the cat sound!
     x->makeSound();
     teta->makeSound();
+    delete i;
+    delete j;
+    delete x;
+    delete y;
+    delete teta;
+    delete meta;
 }

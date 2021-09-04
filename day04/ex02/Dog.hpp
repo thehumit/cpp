@@ -4,13 +4,10 @@
 #include <string>
 #include <iostream>
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 class Dog
     : public Animal
 {
-private:
-    Brain *_brain;
 protected:
     std::string _type;
 public:
@@ -26,7 +23,6 @@ Dog::Dog(std::string type) :
     _type(type)
 {
     std::cout << "Dog constructor called." << std::endl;
-    this->_brain = new Brain;
 }
 
 Dog::Dog(const Dog &cp)
@@ -40,8 +36,6 @@ Dog&	Dog::operator= (const Dog &cp)
     if (this == &cp)
         return (*this);
     this->_type = cp._type;
-    this->_brain = new Brain;
-    this->_brain->setIdea("new Dog idea");
 	return (*this);
 }
 
@@ -58,7 +52,6 @@ std::string Dog::getType()
 Dog::~Dog()
 {
     std::cout << "Dog destructor called." << std::endl;
-    delete this->_brain;
 }
 
 #endif
