@@ -2,14 +2,15 @@
 
 int main()
 {
+    Bureaucrat *ti;
     
     try
     {
-        Bureaucrat pidor("John", 0);
+        ti = new Bureaucrat("John", 0);
     }
-    catch(int i)
+    catch(std::exception & e)
     {
-        std::cout << "Jopa" << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-    
+    return (0);
 }
