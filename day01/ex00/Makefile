@@ -5,17 +5,18 @@ SRCS	=	main.cpp \
 			newZombie.cpp \
 			randomChump.cpp \
 
+SRCS_HPP = Zombie.hpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
-CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
+CC				= clang++	-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= zombie
+# NAME			= zombie
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) Makefile $(SRCS_HPP)
 				$(CC) -o ${NAME} ${OBJS}
 
 %.o:	%.c *.hpp Makefile
