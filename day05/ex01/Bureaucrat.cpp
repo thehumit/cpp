@@ -1,39 +1,5 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
-
-#include <string>
-#include <iostream>
-#include <exception>
-
-class Bureaucrat
-{
-private:
-    std::string _name;
-    int _points;
-public:
-    Bureaucrat(std::string name = "deafault", int points = 1);
-    Bureaucrat&	operator= (const Bureaucrat &cp);
-    // std::ostream& operator<< (std::ostream &out, const Bureaucrat &bureaucrat);
-    Bureaucrat(const Bureaucrat &cp);
-    ~Bureaucrat();
-    class GradeTooHighException
-        : public std::exception
-    {
-    public:
-        const char* what() const throw() { return "Your grade is too high."; }
-
-    };
-    class GradeTooLowException
-        : public std::exception
-    {
-    public:
-        const char* what() const throw() { return "Your grade is too low."; }
-    };
-    std::string const &getName() const;
-    int const &getPoints() const;
-    void increment();
-    void decrement();
-};
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int points)
     : _name(name), _points(points)
@@ -99,4 +65,10 @@ std::ostream& operator<< (std::ostream &out, const Bureaucrat &bureaucrat)
     return out;
 }
 
-#endif
+void Bureaucrat::signForm(Form &form, bool flag) const
+{
+    if (flag)
+        std::cout << this->getName() << " signs " << form.getName() << ".";
+    else
+        std::cout << this->getName() << "cannot signs " << form.getName() << " because his grade is too low.";
+}

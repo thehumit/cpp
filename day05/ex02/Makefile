@@ -1,6 +1,11 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			Form.cpp \
+			Bureaucrat.cpp
+
+SRCS_HPP = Form.hpp \
+		Bureaucrat.hpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)
@@ -12,10 +17,10 @@ NAME			= ClapTrap
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) Makefile $(SRCS_HPP)
 				$(CC) -o ${NAME} ${OBJS}
 
-%.o:	%.cpp *.hpp Makefile
+%.o:	%.cpp *.hpp
 		$(CC) -c $< -o $@
 
 clean:
