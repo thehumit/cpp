@@ -14,5 +14,11 @@ Data*		deserialize(uintptr_t raw)
 
 int main(void)
 {
+	Data *data = new Data();
+	std::cout << data << std::endl;
+	uintptr_t p = serialize(data);
+	std::cout << p << std::endl;
+	std::cout << deserialize(p) << std::endl;
+	std::cout << data << std::endl;
 	
 }

@@ -1,20 +1,6 @@
-NAME		= ClapTrap
+NAME		= convert
 
-SRCS	=	main.cpp \
-			Form.cpp \
-			Bureaucrat.cpp \
-			PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp \
-			ShrubberyCreationForm.cpp \
-			Intern.cpp
-
-
-SRCS_HPP = Form.hpp \
-		Bureaucrat.hpp \
-		PresidentialPardonForm.hpp \
-		RobotomyRequestForm.hpp \
-		ShrubberyCreationForm.hpp \
-		Intern.cpp
+SRCS	=	main.cpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)
@@ -22,7 +8,7 @@ OBJS			= $(SRCS:%cpp=%o)
 CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= ClapTrap
+NAME			= convert
 
 all:			$(NAME)
 

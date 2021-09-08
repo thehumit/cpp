@@ -1,20 +1,11 @@
 NAME		= ClapTrap
 
 SRCS	=	main.cpp \
-			Form.cpp \
-			Bureaucrat.cpp \
-			PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp \
-			ShrubberyCreationForm.cpp \
-			Intern.cpp
+			Base.cpp
 
 
-SRCS_HPP = Form.hpp \
-		Bureaucrat.hpp \
-		PresidentialPardonForm.hpp \
-		RobotomyRequestForm.hpp \
-		ShrubberyCreationForm.hpp \
-		Intern.cpp
+SRCS_HPP = Base.hpp
+
 			
 
 OBJS			= $(SRCS:%cpp=%o)
