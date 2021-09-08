@@ -32,17 +32,33 @@ void toInt(double value)
         std::cout << "impossible" << std::endl;
         return ;
     }
-    char a = static_cast<int>(value);
-    if (a < 33 || a > 126)
-    {
-        std::cout << "Not printable" << std::endl;
-    }
-    else
-    {
-        std::cout << static_cast<char>(a) << std::endl;
-    }
+    int a = static_cast<int>(value);
+    std::cout << static_cast<int>(a) << std::endl;
 }
 
+void toDouble(double value)
+{
+    std::cout << "double:";
+    if (value == -std::numeric_limits<double>::infinity() || value ==
+        std::numeric_limits<double>::infinity())
+    {
+        std::cout << "impossible" << std::endl;
+        return ;
+    }
+    std::cout << static_cast<double>(value) << std::endl;
+}
+
+void toFloat(double value)
+{
+    std::cout << "float:";
+    if (value == -std::numeric_limits<double>::infinity() || value ==
+        std::numeric_limits<double>::infinity())
+    {
+        std::cout << "impossible" << std::endl;
+        return ;
+    }
+    std::cout << static_cast<float>(value) << "f" << std::endl;
+}
 
 int main(int ac, char **av)
 {
@@ -50,9 +66,9 @@ int main(int ac, char **av)
 
     if (ac != 2)
         return (0);
-
+    std::cout.precision(1);
+    std::cout << std::fixed;
     value = static_cast<double>(atof(av[1]));
-    // std::cout << value << std::endl;
     try
     {
         toChar(value);
@@ -61,6 +77,28 @@ int main(int ac, char **av)
     {
         std::cerr << e.what() << '\n';
     }
-    
-
+    try
+    {
+        toInt(value);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        toFloat(value);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        toDouble(value);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
