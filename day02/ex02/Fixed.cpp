@@ -90,7 +90,9 @@ Fixed& Fixed::operator -- (void)
 Fixed Fixed::operator ++ (int x)
 {
 	Fixed tmp(*this);
-
+	int a = x;
+	a += x;
+	
 	this->point++;
 	return (tmp);
 } 
@@ -98,6 +100,8 @@ Fixed Fixed::operator ++ (int x)
 Fixed Fixed::operator -- (int x)
 {
 	Fixed tmp(*this);
+	int a = 0;
+	a += x;
 
 	this->point--;
 	return (tmp);

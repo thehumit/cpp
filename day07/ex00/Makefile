@@ -1,28 +1,24 @@
-NAME		= FragTrap
+NAME		= ClapTrap
 
-SRCS	=	main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp \
-			FragTrap.cpp 
+SRCS	=	main.cpp
+
+
+SRCS_HPP = whatever.hpp
 			
-
-SRCS_HPP	= ClapTrap.hpp \
-				ScavTrap.hpp \
-				FragTrap.hpp 
 
 OBJS			= $(SRCS:%cpp=%o)
 
-CC				= clang++	-Wall -Werror -Wextra
+CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
 RM				= rm -f
 
-NAME			= FragTrap
+NAME			= ClapTrap
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS) Makefile $(SRCS_HPP)
 				$(CC) -o ${NAME} ${OBJS}
 
-%.o:	%.cpp *.hpp Makefile
+%.o:	%.cpp *.hpp
 		$(CC) -c $< -o $@
 
 clean:

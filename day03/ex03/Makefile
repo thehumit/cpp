@@ -5,17 +5,23 @@ SRCS	=	main.cpp \
 			ScavTrap.cpp \
 			FragTrap.cpp \
 			DiamondTrap.cpp
+			
+
+SRCS_HPP	= ClapTrap.hpp \
+				ScavTrap.hpp \
+				FragTrap.hpp \
+				DiamondTrap.hpp
 
 OBJS			= $(SRCS:%cpp=%o)
 
-CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
+CC				= clang++	-Wall -Werror -Wextra
 RM				= rm -f
 
 NAME			= DiamondTrap
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) Makefile $(SRCS_HPP)
 				$(CC) -o ${NAME} ${OBJS}
 
 %.o:	%.cpp *.hpp Makefile

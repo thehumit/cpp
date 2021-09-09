@@ -23,7 +23,7 @@ void ClapTrap::attack(std::string const & target)
 }
 
 ClapTrap::ClapTrap(std::string name) 
-    : _hitpoints(10), _energyPoints(10), _attackDamage(0), _name(name)
+    : _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << name << " was created." << std::endl;
 }
