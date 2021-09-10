@@ -1,23 +1,4 @@
-#ifndef ICE_HPP
-#define ICE_HPP
-#include <iostream>
-#include <string>
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
-// #include "Character.hpp"
-
-class Ice
-    :public AMateria
-{
-public:
-    Ice(std::string const & type = "ice");
-    Ice&	operator= (const Ice &cp);
-    Ice(const Ice &cp);
-    ~Ice();
-    std::string const & getType() const; //Returns the materia type
-    Ice* clone() const;
-    void use(ICharacter& target) const;
-};
+#include "Ice.hpp"
 
 Ice::Ice(std::string const & type)
     // : _type(type)
@@ -59,5 +40,3 @@ void Ice::use(ICharacter& target) const
 {
     std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
 }
-
-#endif

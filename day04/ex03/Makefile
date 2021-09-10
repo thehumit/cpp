@@ -1,11 +1,17 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			AMateria.cpp \
+		    Character.cpp \
+			Cure.cpp \
+			Ice.cpp \
+			MateriaSource.cpp
+
 			
 
 OBJS			= $(SRCS:%cpp=%o)
 
-CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
+CC				= clang++	-Wall -Werror -Wextra
 RM				= rm -f
 
 NAME			= ClapTrap

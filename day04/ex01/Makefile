@@ -1,6 +1,10 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			Animal.cpp \
+			Brain.cpp \
+			Cat.cpp \
+			Dog.cpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)
