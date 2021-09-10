@@ -25,9 +25,8 @@ void toChar(double value)
 
 void toInt(double value)
 {
-    std::cout << "int:";
     if (value == -std::numeric_limits<double>::infinity() || value ==
-        std::numeric_limits<double>::infinity() || std::isnan(value))
+        std::numeric_limits<double>::infinity())
     {
         std::cout << "impossible" << std::endl;
         return ;
@@ -39,10 +38,25 @@ void toInt(double value)
 void toDouble(double value)
 {
     std::cout << "double:";
-    if (value == -std::numeric_limits<double>::infinity() || value ==
-        std::numeric_limits<double>::infinity())
+    // if (value == -std::numeric_limits<double>::infinity() || value ==
+    //     std::numeric_limits<double>::infinity())
+    // {
+    //     std::cout << "impossible" << std::endl;
+    //     return ;
+    // }
+    if (value == -std::numeric_limits<double>::infinity())
     {
-        std::cout << "impossible" << std::endl;
+        std::cout << "-inf" << std::endl;
+        return ;
+    }
+    if (value == std::numeric_limits<double>::infinity())
+    {
+        std::cout << "inf" << std::endl;
+        return ;
+    }
+    if (std::isnan(value))
+    {
+        std::cout << "nan" << std::endl;
         return ;
     }
     std::cout << static_cast<double>(value) << std::endl;
@@ -51,10 +65,19 @@ void toDouble(double value)
 void toFloat(double value)
 {
     std::cout << "float:";
-    if (value == -std::numeric_limits<double>::infinity() || value ==
-        std::numeric_limits<double>::infinity())
+    if (value == -std::numeric_limits<double>::infinity())
     {
-        std::cout << "impossible" << std::endl;
+        std::cout << "-inff" << std::endl;
+        return ;
+    }
+    if (value == std::numeric_limits<double>::infinity())
+    {
+        std::cout << "inff" << std::endl;
+        return ;
+    }
+    if (std::isnan(value))
+    {
+        std::cout << "nanf" << std::endl;
         return ;
     }
     std::cout << static_cast<float>(value) << "f" << std::endl;
