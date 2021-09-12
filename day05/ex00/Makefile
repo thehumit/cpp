@@ -1,18 +1,21 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			Bureaucrat.cpp
+
+SRCS_HPP =  Bureaucrat.hpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)
 
-CC				= clang++	#-fsanitize=address#-Wall -Werror -Wextra
+CC				= clang++ -Wall -Werror -Wextra	#-fsanitize=address#
 RM				= rm -f
 
 NAME			= ClapTrap
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) Makefile $(SRCS_HPP)
 				$(CC) -o ${NAME} ${OBJS}
 
 %.o:	%.cpp *.hpp Makefile
