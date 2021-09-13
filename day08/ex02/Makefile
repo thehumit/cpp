@@ -1,9 +1,10 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			mutantstack.cpp
 
 
-SRCS_HPP = Array.hpp
+SRCS_HPP = mutantstack.hpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)

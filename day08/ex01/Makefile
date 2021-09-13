@@ -1,9 +1,9 @@
 NAME		= ClapTrap
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			span.cpp
 
-
-SRCS_HPP = Array.hpp
+SRCS_HPP =  span.hpp
 			
 
 OBJS			= $(SRCS:%cpp=%o)

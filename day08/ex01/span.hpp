@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
+#include <ostream>
 #include <vector>
-#include <ctime>
+#include <algorithm>
 
 class Span
 {
@@ -10,7 +11,7 @@ private:
     unsigned int _size;
     int _numStored;
 public:
-    Span(int n = 0);
+    Span(unsigned int n = 0);
     Span(const Span& copy);
     Span& operator=(const Span& copy);
     ~Span();
@@ -21,30 +22,20 @@ public:
     {
     public:
         const char* what() const throw() { return "More numbers, than allowed."; }
-
     };
+    int shortestSpan();
+    int longestSpan();
+    std::vector<int> getVec() const;
 };
 
-Span::Span(unsigned int n)
-    :_size(n), _numStored(0)
-{
-}
+// template <class T>
+template <class T>
 
-Span::Span(const Span& copy)
+std::ostream& operator<< (std::ostream &out, const std::vector<T> &vec)
 {
-    (*this) = copy;
+    int size = vec.size();
+    for (int i = 0; i < size; i++)
+        out << "++" << vec[i] << std::endl;
+    return out;
 }
-
-Span&		Span::operator=(const Span& copy)
-{
-    if (this == &copy)
-        return (*this);
-    this->_size = copy._size;
-    this->_vec = copy._vec;
-    return (*this);
-}
-
-
-Span::~Span()
-{
-}
+// std::ostream& operator<< (std::ostream &out, const std::vector<T> &vec);
